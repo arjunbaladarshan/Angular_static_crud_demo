@@ -1,0 +1,30 @@
+<table>
+    <tr>
+        <td>Enter First Name</td>
+        <td><input type="text" [(ngModel)]="tempStudent.FirstName" /></td>
+    </tr>
+    <tr>
+        <td>Enter Last Name</td>
+        <td><input type="text" [(ngModel)]="tempStudent.LastName" /></td>
+    </tr>
+    <tr>
+        <td>Enter Department</td>
+        <td><input type="text" [(ngModel)]="tempStudent.Department" /></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <button (click)="saveStudent()">Save</button>
+        </td>
+    </tr>
+</table>
+
+<table>
+    <tr *ngFor="let stu of students; let i = index">
+        <td>{{ i+1 }}</td>
+        <td>{{ stu.FirstName }}</td>
+        <td>{{ stu.LastName }}</td>
+        <td>{{ stu.Department }}</td>
+        <td><button (click)="deleteStudent(i)">Delete</button></td>
+        <td><button (click)="setForEdit(i)">Edit</button></td>
+    </tr>
+</table>

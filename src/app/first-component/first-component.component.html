@@ -1,0 +1,13 @@
+<input type="text" [(ngModel)]="studentName" />
+<button (click)="insert()">Save</button>
+
+
+<br/><br/>
+<table border="1">
+    <tr *ngFor="let sn of students; let i = index">
+        <td>{{ i+1 }}</td>
+        <td>{{ sn }}</td>
+        <td><button (click)="deleteStudent(i)">Delete</button></td>
+        <td><button (click)="setForEdit(i)">Edit</button></td>
+    </tr>
+</table>
